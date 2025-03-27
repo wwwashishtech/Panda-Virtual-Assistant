@@ -1,3 +1,5 @@
+import os
+os.environ['DISPLAY'] = ':0'  # Mock display environment
 import threading
 from flask import Flask, render_template, request, jsonify, session, send_from_directory
 from flask_cors import CORS
@@ -8,7 +10,6 @@ import random
 import logging
 import requests
 import re
-import os
 import json
 import pytz
 from pytz import timezone
