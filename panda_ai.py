@@ -20,7 +20,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from geopy.geocoders import Nominatim
 from timezonefinder import TimezoneFinder
-import pywhatkit as kit
+
 import pyjokes
 import wolframalpha
 import subprocess
