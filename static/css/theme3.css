@@ -1,0 +1,357 @@
+/* Vibrant Purple Theme */
+
+/* Reset and General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #9C27B0;
+    color: white;
+    padding: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* Main Styles */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #8E24AA, #BA68C8, #D1C4E9, #7B1FA2);
+    animation: gradient 10s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.assistant-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 80%;
+}
+
+.panda-avatar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    background: linear-gradient(135deg, #8E24AA, #BA68C8, #D1C4E9, #7B1FA2);
+}
+
+.panda-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.panda-avatar:hover {
+    transform: scale(1.1);
+}
+
+.panda-avatar:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+.response-display {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Input Area */
+.input-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Full width */
+    margin-top: 20px;
+}
+
+.input-area form {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ensure the form takes full width */
+    justify-content: center; /* Center the input and button */
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    margin: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 100%; /* Full width */
+    max-width: 300px; /* Limit the width of the input */
+}
+
+.input-area button {
+    background-color: #9C27B0;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 12px 24px;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+    width: auto; /* Adjust button to auto width */
+    max-width: 150px; /* Limit the max width of the button */
+}
+
+.input-area button img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.input-area button:hover {
+    background-color: #7B1FA2;
+}
+
+/* Mic Button Styles */
+.input-area .mic-button {
+    margin-bottom: 10px;
+}
+
+.input-area .mic-button img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.input-area .mic-button:hover {
+    background-color: transparent;
+}
+
+.input-area .mic-button:hover img {
+    filter: brightness(1.2);
+}
+
+/* Info Cards */
+.info-cards {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 30%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Shortcut Buttons */
+.shortcut-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.shortcut {
+    background-color: #9C27B0;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.shortcut:hover {
+    background-color: #7B1FA2;
+}
+
+/* Footer Actions */
+.footer-actions {
+    display: flex;
+    flex-wrap: wrap; /* Wrap on smaller screens */
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Space between buttons */
+    margin-bottom: 20px;
+  }
+  
+  .footer-actions button {
+    background-color: #4CAF50; /* Green */
+    color: white; /* White text */
+    border: none;
+    padding: 12px 24px; /* Prominent look */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+  }
+  
+  .footer-actions button:hover {
+    background-color: #388E3C; /* Darker green */
+    transform: scale(1.05);
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 1024px) {
+    header {
+      padding: 1em 1.5em;
+    }
+  
+    header h1 {
+      font-size: 1.4em;
+    }
+  
+    .info-cards, .shortcut-buttons {
+      flex-direction: column; /* Stack cards on smaller screens */
+      align-items: center; /* Center cards */
+      width: 100%; /* Full width */
+    }
+  
+    .card, .shortcut {
+      width: 80%; /* Wider on tablet */
+      margin-bottom: 20px;
+    }
+  
+    .panda-avatar {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .panda-avatar img {
+      object-fit: cover;
+    }
+  
+    .assistant-container {
+      width: 90%;
+      margin-bottom: 30px;
+    }
+  
+    .input-area input {
+      padding: 12px;
+    }
+  
+    .input-area button {
+      padding: 14px 28px;
+    }
+  
+    footer {
+      padding: 20px;
+    }
+  
+    .footer-actions button {
+      padding: 10px 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .info-cards, .shortcut-buttons {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  
+    .card, .shortcut {
+      width: 90%;
+      margin-bottom: 15px;
+    }
+  
+    header h1 {
+      font-size: 1.2em;
+    }
+  
+    .input-area input {
+      padding: 12px;
+      font-size: 14px;
+      width: 100%;
+    }
+  
+    .input-area button {
+      padding: 14px 28px;
+      width: 100%; /* Make button take full width on mobile */
+    }
+  
+    .footer-actions button {
+      padding: 12px 20px;
+    }
+  
+    .panda-avatar {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  

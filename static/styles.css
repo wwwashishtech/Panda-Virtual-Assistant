@@ -1,0 +1,622 @@
+/* Reset and General Styles */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #008b05;
+    color: white;
+    padding: 1.2em 2.5em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    font-family: 'Bona Nova SC', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+header:hover {
+    background-color: #006e04;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-profile img {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    border: 2px solid #fff;
+    transition: transform 0.3s ease;
+}
+
+.user-profile img:hover {
+    transform: scale(1.1);
+}
+
+/* Main Styles */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5em;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #00c6ff, #0072ff, #ff0081, #ff8c00);
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite, parallax 30s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+@keyframes parallax {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+/* Assistant Container */
+.assistant-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2.5em;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 750px;
+    position: relative;
+    z-index: 2;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.assistant-container:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Panda Avatar */
+.panda-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #FF6F61, #FFB74D, #64B5F6, #81C784, #B39DDB);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    margin-bottom: 2em;
+}
+
+.panda-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+}
+
+.panda-avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+}
+
+.panda-avatar:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+/* Enhanced Main Prompt Box */
+.assistant-container {
+    background-color: rgba(255, 255, 255, 0.9); /* More transparent background */
+    padding: 3em;
+    border-radius: 20px; /* More rounded */
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15); /* Softer shadow */
+    max-width: 800px;
+    transition: all 0.4s ease; /* Enhanced smooth transition */
+}
+
+.assistant-container:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+/* Response Display */
+.response-display {
+    border: 1px solid #e0e0e0;
+    padding: 1.5em;
+    width: 100%;
+    min-height: 150px;
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 1.5em 0;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    line-height: 1.6;
+}
+
+/* Input Area Styles */
+.input-area {
+    display: flex;
+    justify-content: space-between; /* Ensure proper alignment of input and button */
+    align-items: center;
+    width: 90%;
+    margin-top: 20px;
+}
+
+.input-area form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 14px;
+    margin: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-area input:focus {
+    border-color: #008b05;
+    outline: none;
+}
+
+.input-area button {
+    background-color: #008b05; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 14px 28px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-area button img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.input-area button:hover {
+    background-color: #006e04; /* Darker shade */
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Info Cards */
+.info-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    width: 100%;
+    margin-top: 2em;
+    z-index: 2;
+}
+
+.card {
+    flex: 1;
+    min-width: 220px;
+    max-width: 280px;
+    background-color: #fff;
+    padding: 1.5em;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Shortcut Buttons - Enhanced with Awesome Effects */
+.shortcut-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    width: 100%;
+    margin-top: 2em;
+    padding: 1em;
+    perspective: 1000px;
+}
+
+.shortcut {
+    position: relative;
+    padding: 1em 2em;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #00b712, #008b05);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 139, 5, 0.3);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    z-index: 1;
+    transform-style: preserve-3d;
+    min-width: 180px;
+}
+
+.shortcut::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #008b05, #00b712);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 50px;
+}
+
+.shortcut:hover {
+    transform: translateY(-5px) rotateX(10deg);
+    box-shadow: 0 12px 25px rgba(0, 139, 5, 0.4);
+}
+
+.shortcut:hover::before {
+    opacity: 1;
+}
+
+.shortcut::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%, -50%);
+    transform-origin: 50% 50%;
+}
+
+.shortcut:focus {
+    outline: none;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 180, 18, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(0, 180, 18, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 180, 18, 0);
+    }
+}
+
+.shortcut:active {
+    transform: translateY(2px) scale(0.98);
+    box-shadow: 0 4px 8px rgba(0, 139, 5, 0.3);
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.shortcut:nth-child(1) {
+    animation: float 4s ease-in-out infinite;
+}
+
+.shortcut:nth-child(2) {
+    animation: float 4.2s ease-in-out infinite 0.2s;
+}
+
+.shortcut:nth-child(3) {
+    animation: float 4.4s ease-in-out infinite 0.4s;
+}
+
+.shortcut:nth-child(4) {
+    animation: float 4.6s ease-in-out infinite 0.6s;
+}
+
+/* Glow Effect on Hover */
+.shortcut:hover {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+/* Ripple Effect */
+.shortcut span {
+    position: relative;
+    z-index: 2;
+}
+
+.shortcut .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .shortcut {
+        min-width: 140px;
+        padding: 0.8em 1.5em;
+        font-size: 1em;
+    }
+    
+    .shortcut-buttons {
+        gap: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .shortcut {
+        min-width: 120px;
+        padding: 0.7em 1.2em;
+        font-size: 0.9em;
+    }
+    
+    .shortcut-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Individual shortcut button */
+.shortcut {
+    padding: 0.8em 2em;
+    border-radius: 50px;
+    background-color: #008b05; /* Solid background color by default */
+    
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-size: 1.1em;
+    text-align: center;  /* Ensures text stays centered */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    outline: none; /* Remove default outline */
+}
+
+.shortcut:hover {
+    background-color: #006e04; /* Darker green on hover */
+    transform: translateY(-3px); /* More noticeable hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+
+/* Focus state for accessibility */
+.shortcut:focus {
+    outline: 2px solid #ffcc00; /* Focus outline for keyboard users */
+    box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.6); /* Subtle outer glow on focus */
+}
+
+/* Active state for click feedback */
+.shortcut:active {
+    transform: translateY(1px); /* Pressed button effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .shortcut-buttons {
+        gap: 1em;
+    }
+
+    .shortcut {
+        font-size: 1em;  /* Adjust button font size on small screens */
+        padding: 0.6em 1.5em; /* Adjust padding for small screens */
+    }
+}
+
+
+/* Footer Styles */
+footer {
+    padding: 2.5em;
+    background-color: #e6f0e6;
+    color: #333;
+    text-align: center;
+    border-top: 2px solid #cccccc;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+footer:hover {
+    background-color: #d9e8d9;
+}
+
+/* FAQ Section */
+.faq-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em 0;
+    color: #333;
+    z-index: 2;
+}
+
+.faq {
+    margin-bottom: 1.5em;
+}
+
+.faq h3 {
+    font-size: 1.2em;
+    color: #008b05;
+}
+
+.faq p {
+    font-size: 1em;
+    margin-top: 0.5em;
+}
+
+.faq hr {
+    margin: 1.5em 0;
+}
+
+/* Footer Actions */
+.footer-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 1.5em;
+}
+
+.footer-actions button {
+    padding: 1em 2em;
+    border-radius: 50px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.footer-actions button:hover {
+    background-color: #388E3C;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 1em;
+    }
+
+    .assistant-container {
+        padding: 1.5em;
+        width: 95%;
+    }
+
+    .panda-avatar {
+        width: 160px;
+        height: 160px;
+    }
+
+    .input-area {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input-area input {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .input-area button {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .card {
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.4em;
+    }
+
+    .panda-avatar {
+        width: 140px;
+        height: 140px;
+    }
+
+    .input-area input {
+        font-size: 1em;
+        padding: 0.8em 1.2em;
+    }
+
+    .input-area button {
+        font-size: 1.1em;
+    }
+
+    .shortcut, .footer-actions button {
+        padding: 0.7em 1.5em;
+        font-size: 1em;
+    }
+}

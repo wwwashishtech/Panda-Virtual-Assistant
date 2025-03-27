@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda Virtual Assistant</title>
+
+    <!-- Default stylesheet -->
+    <link id="theme-style" rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <!-- FontAwesome for icons -->
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/js/all.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header section -->
+        <header>
+            <h1>Panda Virtual Assistant</h1>
+            <div class="user-profile" role="banner">
+                <img src="{{ url_for('static', filename='user-avatar.png') }}" alt="User Avatar" class="user-avatar" loading="lazy">
+                <span class="user-name">Panda 🐼</span>
+            </div>
+
+            <!-- Theme Changer Dropdown -->
+            <div class="theme-changer">
+                <label for="theme-selector">Choose Theme:</label>
+                <select id="theme-selector" aria-label="Theme Selection Dropdown">
+                    <option value="css/styles.css" selected>Default</option>
+                    <option value="css/theme1.css">Cool Blue</option>
+                    <option value="css/theme2.css">Warm Orange</option>
+                    <option value="css/theme3.css">Vibrant Purple</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main>
+            <div class="background" id="dynamic-background" aria-live="polite"></div>
+
+            <!-- Panda Avatar and response display -->
+            <section class="assistant-container" aria-labelledby="assistant-title">
+                <h2 id="assistant-title" class="sr-only">Panda Assistant</h2>
+                <div class="panda-avatar">
+                    <img src="{{ url_for('static', filename='panda.png') }}" alt="Panda Virtual Assistant Avatar" id="panda-avatar" loading="lazy">
+                </div>
+
+                <!-- Command response display -->
+                <div class="response-display" id="response-display" aria-live="polite" role="log"></div>
+
+                <!-- Input form for commands -->
+                <div class="input-area">
+                    <form id="command-form" onsubmit="event.preventDefault(); submitCommand();" novalidate aria-label="Command Input Form">
+                        <!-- Voice command button -->
+                        <button id="voice-button" type="button" aria-label="Activate voice command">
+                            <img src="{{ url_for('static', filename='mic-icon.png') }}" alt="Microphone" loading="lazy">
+                        </button>
+
+                        <!-- Text input for manual commands -->
+                        <label for="text-input" class="sr-only">Command Input</label>
+                        <input type="text" id="text-input" placeholder="Type a command..." aria-label="Command Input" required>
+                        <button type="submit" id="send-button">Send</button>
+                    </form>
+                </div>
+
+                <!-- Loading indicator with animation -->
+                <div id="loading-indicator" class="loading-indicator" style="display:none;">
+                    <div class="spinner"></div>
+                    <span>Processing your command...</span>
+                </div>
+            </section>
+
+            <!-- Expanded info cards section -->
+            <section class="info-cards" aria-label="Quick Information Cards">
+                <div class="card" id="show-date" role="button" tabindex="0">Show Today's Date</div>
+                <div class="card" id="news-card" role="button" tabindex="0">News Updates</div>
+                <div class="card" id="quote-card" role="button" tabindex="0">Quote of the Day</div>
+                <div class="card" id="set-timer-card" role="button" tabindex="0">Set a Timer</div>
+                <div class="card" id="calendar-card" role="button" tabindex="0">Check Calendar Events</div>
+            </section>
+
+            <!-- Shortcut buttons with icons -->
+            <section class="shortcut-buttons" aria-label="Shortcut Actions">
+                <button class="shortcut" id="open-browser" aria-label="Open Browser"><i class="fas fa-globe"></i> Open Browser</button>
+                <button class="shortcut" id="check-weather" aria-label="Check Weather"><i class="fas fa-cloud-sun"></i> Check Weather</button>
+                <button class="shortcut" id="play-music" aria-label="Play Music"><i class="fas fa-music"></i> Play Music</button>
+                <button class="shortcut" id="clear-history" aria-label="Clear Command History"><i class="fas fa-trash"></i> Clear History</button>
+            </section>
+            
+            <!-- FAQ section -->
+            <section class="faq-section" aria-labelledby="faq-title">
+                <h2 id="faq-title">Frequently Asked Questions</h2>
+                <hr>
+                <div class="faq">
+                    <h3><i class="fas fa-microphone-alt"></i> How do I use the voice command feature?</h3>
+                    <p>Click on the <strong>microphone</strong> icon and speak your command clearly.</p>
+                </div>
+                <hr>
+                <div class="faq">
+                    <h3><i class="fas fa-volume-up"></i> Can I change the assistant's voice?</h3>
+                    <p>Currently, voice customization is not available, but we're working on it!</p>
+                </div>
+                <hr>
+                <div class="faq">
+                    <h3><i class="fas fa-question-circle"></i> How do I reset the assistant?</h3>
+                    <p>You can reset the assistant by clicking on the <strong>Clear History</strong> button in the footer.</p>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer>
+                <hr>
+                <div class="social-media">
+                    <p>Connect with us:</p>
+                    <a href="https://x.com/AshishV84379459" target="_blank" aria-label="Twitter"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100023927648409&mibextid=ZbWKwL" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f fa-2x"></i></a>
+                    <a href="https://www.instagram.com/x_x_ashish784_x_x/profilecard/?igsh=MnZ3YWR0dm45djFy" target="_blank" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
+                </div>
+                <hr>
+                <div class="footer-text">
+                    <p>&copy; 2024 Panda Virtual Assistant.</p>
+                    <p>Developed by <strong>Ashish Vishwakarma</strong>.</p>
+                    <p><a href="#privacy-policy" aria-label="Privacy Policy">Privacy Policy</a> | <a href="#terms" aria-label="Terms and Conditions">Terms & Conditions</a></p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Including the JavaScript file -->
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>

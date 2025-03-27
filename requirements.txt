@@ -1,0 +1,100 @@
+# ======================
+# CORE DEPENDENCIES
+# ======================
+
+# Web Framework
+Flask==2.3.2
+Flask-Cors==3.0.10
+Werkzeug==2.3.7
+gunicorn==21.2.0; sys_platform != 'win32'
+uvicorn==0.23.2
+
+# Essential Utilities
+python-dotenv==1.0.0
+pydantic==2.5.2
+click==8.1.7
+python-dateutil==2.8.2
+
+# ======================
+# API INTEGRATIONS
+# ======================
+requests==2.31.0
+openai==1.12.0
+wolframalpha==5.0.0
+yfinance==0.2.28
+newsapi-python==0.2.7
+
+# ======================
+# DATA PROCESSING
+# ======================
+numpy==1.26.0
+pandas==2.1.0
+scipy==1.11.2
+
+# ======================
+# NLP & TEXT PROCESSING
+# ======================
+nltk==3.8.1
+spacy==3.7.2
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.0/en_core_web_sm-3.7.0-py3-none-any.whl
+beautifulsoup4==4.12.2
+wikipedia==1.4.0
+Wikipedia-API==0.5.8
+emoji==2.8.0
+
+# ======================
+# LOCATION & TIME
+# ======================
+geopy==2.3.0
+timezonefinder==6.2.0
+pytz==2023.3
+tzdata==2023.3; sys_platform != 'win32'
+
+# ======================
+# AUDIO/VOICE PROCESSING
+# ======================
+sounddevice==0.4.6
+SpeechRecognition==3.10.0
+gTTS==2.4.0
+pydub==0.25.1
+
+# ======================
+# UI & INTERACTION
+# ======================
+pywhatkit==5.4
+pyperclip==1.8.2
+colorama==0.4.6
+pytweening==1.0.7
+pyjokes==0.6.0
+
+# ======================
+# SECURITY
+# ======================
+certifi==2025.1.31
+charset-normalizer==3.2.0
+idna==3.4
+urllib3==2.0.5
+email-validator==2.0.0
+python-decouple==3.8
+
+# ======================
+# BUILD & PACKAGING
+# ======================
+setuptools==78.1.0
+wheel==0.45.1
+Cython==3.0.2
+
+# ======================
+# TEMPLATING
+# ======================
+Jinja2==3.1.2
+MarkupSafe==2.1.3
+itsdangerous==2.1.2
+blinker==1.7.0
+
+# ======================
+# WINDOWS-SPECIFIC
+# ======================
+pywin32==306; sys_platform == 'win32' and platform_machine == 'AMD64'
+comtypes==1.2.0; sys_platform == 'win32'
+PyAutoGUI==0.9.54; sys_platform == 'win32'
