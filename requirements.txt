@@ -65,7 +65,7 @@ pyperclip==1.8.2
 colorama==0.4.6
 pytweening==1.0.7
 pyjokes==0.6.0
-pywhatkit
+
 
 # ======================
 # SECURITY
@@ -97,4 +97,4 @@ blinker==1.7.0
 # ======================
 pywin32==306; sys_platform == 'win32' and platform_machine == 'AMD64'
 comtypes==1.2.0; sys_platform == 'win32'
-PyAutoGUI==0.9.54; sys_platform == 'win32'
+
